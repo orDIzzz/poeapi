@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'r7*n*4de=)hmf-ywn1t6(vm3(xcokqqa8=-2v14f221=iqd5ke')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS = []
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
+ALLOWED_HOSTS = ["poe-api-filter.ru"]
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT='/home/artem/poeapi/static/'
 CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

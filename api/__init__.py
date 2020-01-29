@@ -1,2 +1,2 @@
-# from api.dataputter import DataPutter
-# dp = DataPutter()
+from api.dataputter import DataPutter
+dp = DataPutter()

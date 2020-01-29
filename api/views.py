@@ -5,13 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from api.serializers import ItemSerializer
 from django_filters.rest_framework import DjangoFilterBackend
-# from api import dp
-
-class ItemView(APIView):
-    def get(self, request):
-        items = Item.objects.all()
-        serializer = ItemSerializer(items, many=True)
-        return Response(serializer.data)
+from api import dp
 
 
 class CategoryView(ListAPIView):
@@ -21,11 +15,8 @@ class CategoryView(ListAPIView):
     filterset_fields = ['category']
 
 
-#
-# class UpdateView(APIView):
-#     def get(self, request):
-#         return Response(dp.last_update)
 
-class StatusView(APIView):
+class UpdateView(APIView):
     def get(self, request):
-        return Response(self.kwargs)
+        return Response(dp.last_update)
+

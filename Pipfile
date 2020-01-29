@@ -17,6 +17,7 @@ redis = "*"
 celery = "==4.4.0"
 django-celery-beat = "*"
 django-debug-toolbar = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

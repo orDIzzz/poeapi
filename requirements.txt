@@ -19,7 +19,6 @@ django-filter
 djangorestframework
 gunicorn
 pandas
-pipenv-to-requirements
 redis
 requests
 schedule
