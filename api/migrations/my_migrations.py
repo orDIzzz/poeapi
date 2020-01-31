@@ -24,7 +24,7 @@ def collect_data(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0002_auto_20200101_2109'),
+        ('api', '0001_initial'),
     ]
 
 
