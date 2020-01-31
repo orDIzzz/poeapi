@@ -7,6 +7,7 @@ class Item(models.Model):
     name = models.CharField(max_length=50, null=False)
     category = models.CharField(max_length=15, null=False)
     type = models.CharField(max_length=30)
+    group = models.CharField(max_length=30)
     standard = models.FloatField()
     standard_hc = models.FloatField()
     current = models.FloatField()

@@ -2,7 +2,7 @@ import json
 import requests
 import datetime
 from alive_progress import alive_bar
-from pandas import DataFrame
+
 
 
 class DataPutter:
@@ -13,13 +13,9 @@ class DataPutter:
         self.__category_to_filter = ['enchantment', 'gem', 'base']
         self.collected_items = self.__get_list()
         self.last_update = datetime.datetime.now().strftime('%d %m %Y %H:%M:%S')
-        self.df_collected_items = DataFrame(self.collected_items)
 
     def __len__(self):
         return len(self.collected_items)
-
-    def category_select(self, category):
-        return self.df_collected_items[self.df_collected_items["category"] == category].to_dict('records')
 
     def __pretty_print(self, items):
         for item in items:
@@ -37,7 +33,8 @@ class DataPutter:
                     'item_number': item['id'],
                     'name': item['name'],
                     'category': item['category'],
-                    'type': item.get('type', '')
+                    'type': item.get('type', ''),
+                    'group': item.get('group', '')
                 })
         print(f'Collected {len(items)} items.')
         return items

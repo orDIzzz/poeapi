@@ -14,6 +14,7 @@ def collect_data(apps, schema_editor):
             name=item['name'],
             category=item['category'],
             type=item['type'],
+            group=item['group'],
             standard=item[dp.standard],
             standard_hc=item[dp.standard_hc],
             current=item[dp.curr_league],
@@ -23,8 +24,9 @@ def collect_data(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0001_initial'),
+        ('api', '0002_auto_20200101_2109'),
     ]
+
 
     operations = [
         migrations.RunPython(collect_data, migrations.RunPython.noop),
