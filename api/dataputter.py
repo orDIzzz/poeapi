@@ -12,7 +12,7 @@ class DataPutter:
         self.__get_current_League()
         self.__category_to_filter = ['enchantment', 'gem', 'base']
         self.collected_items = self.__get_list()
-        self.last_update = datetime.datetime.now().strftime('%d %m %Y %H:%M:%S')
+        self.last_update = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
     def __len__(self):
         return len(self.collected_items)

@@ -15,8 +15,7 @@ class CategoryView(ListAPIView):
     filterset_fields = ['category']
 
 
-
 class UpdateView(APIView):
     def get(self, request):
-        return Response(dp.last_update)
+        return Response({"last_update": dp.last_update})
 
